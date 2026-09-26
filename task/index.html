@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <h3>Task<span>Manager</span></h3>
+
+      <div class="top-right">
+        <input id="search" type="text" placeholder="Search task..." />
+        <div class="link">
+          <h4 id="all">All</h4>
+          <h4 id="study">Study</h4>
+          <h4 id="work">Work</h4>
+          <h4 id="personal">Personal</h4>
+        </div>
+        <button id="themeToggle" class="btn">
+          <!-- <i class="bi bi-moon-fill"></i> -->
+          <span>☀️</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <section id="section1">
+        <h1>Task Overview</h1>
+        <p id="title">Real-time tracking application</p>
+
+        <div class="card">
+          <div class="card1">
+            <div class="card-icon-background1">
+              <i class="bi bi-card-checklist"></i>
+            </div>
+            <p>Total Tasks</p>
+            <p id="count1">0</p>
+          </div>
+
+          <div class="card1">
+            <div class="card-icon-background2">
+              <i class="bi bi-check2-circle"></i>
+            </div>
+            <p>Completed Tasks</p>
+            <p id="count2">0</p>
+          </div>
+
+          <div class="card1">
+            <div class="card-icon-background3">
+              <i class="bi bi-clock-history"></i>
+            </div>
+            <p>Pending Tasks</p>
+            <p id="count3">0</p>
+          </div>
+        </div>
+
+        <div class="create-tasks">
+          <h3>Create New Task</h3>
+
+          <form id="formdiv">
+            <input id="input" type="text" placeholder="Add a new task..." />
+
+            <select name="" id="category">
+              <option value="Study">📚 Study</option>
+              <option value="Work">💼 Work</option>
+              <option value="Personal">👤 Personal</option>
+            </select>
+
+            <button class="btn" type="submit">Add Task</button>
+            <button class="delete" type="button">Delete All Task</button>
+          </form>
+        </div>
+
+        <div class="display-tasks">
+          <h3>Task List</h3>
+          <div id="taskContainer" class="task-grid" aria-live="polite">
+            <div class="empty-state" id="emptyState">
+              <span class="task-icon">📋</span>
+              <h3>No tasks yet</h3>
+              <p>Add your first task above to get started.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- section2 -->
+
+      <section id="section2">
+        <div class="input-demo">
+          <h3>Property vs Attribute</h3>
+
+          <div class="input-area">
+            <div class="input-group">
+              <label>Input Value</label>
+              <input id="demoInput" type="text" value="Original Value" />
+            </div>
+
+            <button onclick="compareInput()">Compare</button>
+          </div>
+
+          <div class="comparison">
+            <div class="code-card">
+              <span>Property</span>
+              <code>input.value</code>
+              <p id="propertyOutput">-</p>
+            </div>
+
+            <div class="code-card">
+              <span>Attribute</span>
+              <code>input.getAttribute("value")</code>
+              <p id="attributeOutput">-</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="event">
+          <h3>Event Propagation</h3>
+          <button id="toggleBtn">Mode: Bubbling</button>
+          <button id="clear">Clear Log</button>
+
+          <div class="diagram">
+            <div class="left">
+              <div class="grand">
+                <span id="div1">GrandParent</span>
+                <div class="parent">
+                  <span id="div2">Parent</span>
+                  <button class="child">Click Me</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="right">
+              <p class="para">Event Execution Order ...</p>
+              <div id="output"></div>
+            </div>
+          </div>
+
+          <div class="prop-explanation">
+            <details>
+              <summary>📖 How propagation works</summary>
+              <p>
+                <strong>Bubbling (default):</strong> Child → Parent →
+                Grandparent (inside-out)
+              </p>
+              <p>
+                <strong>Capturing (true):</strong> Grandparent → Parent → Child
+                (outside-in)
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- section3 -->
+      <section id="section3">
+        <div class="browser">
+          <h3>Browser Rendering Pipeline</h3>
+
+          <div class="pipeline-wrapper">
+            <div class="html">
+              <!-- html -->
+              <div class="html-card">
+                <div class="icon">&lt;/&gt;</div>
+                <h4>HTML</h4>
+                <p>Raw document</p>
+              </div>
+
+              <div class="pipe-arrow">→</div>
+
+              <div class="parsing">
+                <div class="icon">🔍</div>
+                <h4>Parsing</h4>
+                <p>Reading code</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="Tokenization">
+                <div class="icon">🔤</div>
+                <h4>Tokenization</h4>
+                <p>Breaking into tokens</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="dom-tree">
+                <div class="icon">🌳</div>
+                <h4>DOM Tree</h4>
+                <p>HTML structure</p>
+              </div>
+            </div>
+
+            <div class="css">
+              <!-- css -->
+              <div class="css-card">
+                <div class="icon">{}</div>
+                <h4>CSS</h4>
+                <p>Stylesheets</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+
+              <div class="cssom">
+                <div class="icon">🎨</div>
+                <h4>CSSOM Tree</h4>
+                <p>CSS structure</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+              <div class="dom-cssom">
+                <div class="icon">&lt;/&gt; {}</div>
+                <h4>DOM + CSSOM</h4>
+                <p>Render Tree</p>
+              </div>
+            </div>
+
+            <!-- html css -->
+            <div class="html-css">
+              <div class="render">
+                <div class="icon">🌿</div>
+                <h4>Render Tree</h4>
+                <p>Combined visual structure</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+
+              <div class="layout">
+                <div class="icon">📐</div>
+                <h4>Layout</h4>
+                <p>Calculate positions</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+
+              <div class="paint">
+                <div class="icon">🖌️</div>
+                <h4>Paint</h4>
+                <p>Draw pixels</p>
+              </div>
+              <div class="pipe-arrow">→</div>
+
+              <div class="screen">
+                <div class="icon">💻</div>
+                <h4>Screen</h4>
+                <p>Final result</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="methods">
+          <h3>DOM Methods</h3>
+          <div class="method-section">
+            <span>createElement()</span>
+            <span>createTextNode()</span>
+            <span>append()</span>
+            <span>prepend()</span>
+            <span>before()</span>
+            <span>after()</span>
+            <span>replaceWith()</span>
+            <span>remove()</span>
+            <span>setAttribute()</span>
+            <span>getAttribute()</span>
+            <span>removeAttribute()</span>
+            <span>hasAttribute()</span>
+            <span>dataset</span>
+            <span>classList</span>
+            <span>addEventListener()</span>
+            <span>querySelector()</span>
+            <span>closest()</span>
+            <span>createDocumentFragment()</span>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
