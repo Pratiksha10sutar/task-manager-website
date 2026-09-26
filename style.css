@@ -61,10 +61,10 @@ html {
   --heading-color: #ffffff;
   --main-bg: black;
 }
-
+/* 
 #taskContainer {
   background-color: white;
-}
+} */
 
 #taskContainer {
   background-color: var(--color-bg-surface);
@@ -489,9 +489,9 @@ select {
   border: 1px dashed var(--color-border);
   margin-left: 0.6em;
   border-radius: var(--border-radius);
-  /* position: relative; */
+  position: relative;
   padding: 20px;
-  /* background-color: var(--color-bg); */
+  background-color: var(--color-bg-surface);
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   gap: 0.875rem;
@@ -504,7 +504,7 @@ select {
   justify-self: center;
   gap: 0.7em;
   position: absolute;
-  bottom: 10%;
+  /* bottom: 10%; */
 }
 
 #emptyState h3 {
