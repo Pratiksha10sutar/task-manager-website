@@ -46,4 +46,10 @@ Event delegation is a technique where we add one event listener to a parent elem
 Example:
 Instead of adding listeners to every button, add one listener to their parent.
 
-
+echo "# task-manager-website" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/Pratiksha10sutar/task-manager-website.git
+git push -u origin main
